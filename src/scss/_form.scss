@@ -135,7 +135,7 @@
     }
     &__content {
       flex-direction: column;
-      background-image: none;
+      background-image: none !important;
       background-color: $colorWhite;
       max-width: 688px;
       padding: 32px;

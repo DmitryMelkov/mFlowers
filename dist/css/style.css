@@ -1893,7 +1893,7 @@ button.swiper-pagination-bullet {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-image: none;
+    background-image: none !important;
     background-color: #FFF;
     max-width: 688px;
     padding: 32px;
