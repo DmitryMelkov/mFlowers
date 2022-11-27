@@ -1,0 +1,198 @@
+@import "_variables";
+@import "_mixins";
+
+.form {
+  background-image: url("../img/form-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    padding: 200px 0;
+  }
+  &__content {
+    max-width: 1140px;
+    background-image: url("../img/form-bg-inner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    max-width: 580px;
+  }
+  &__title {
+    margin-bottom: 40px;
+    @include text(36px, 43px, 400, $colorBlack);
+    font-family: "Marmelad", sans-serif;
+  }
+  &__descr {
+    @include text(18px, 21px, 400, $colorBlack);
+    font-family: "Raleway", sans-serif;
+  }
+  &__right {
+    max-width: 320px;
+    width: 100%;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  &__span {
+    margin-bottom: 10px;
+    @include text(14px, 16px, 500, $colorBlack);
+    font-family: "Raleway", sans-serif;
+  }
+  &__input {
+    margin-bottom: 10px;
+    width: 100%;
+    min-width: 250px;
+    height: 48px;
+    padding-left: 8px;
+    @include text(14px, 16px, 600, $colorBlack);
+    font-family: "Raleway", sans-serif;
+    background-color: $colorInput;
+    border-radius: 6px;
+    border: 1px solid $colorInput;
+    @include transition(border, 0.3s, ease-in-out);
+  }
+  &__input::placeholder {
+    @include text(14px, 16px, 500, $colorInputText);
+  }
+  &__input.error {
+    box-shadow: 0 0 15px $colorRed;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    @include text(12px, 14.09px, 400, $colorInputText);
+    opacity: 0;
+  }
+  &__label-svg {
+    margin-right: 5px;
+    @include svg-icon(16px, 16px, $colorBlack);
+  }
+  &__input.error + &__label {
+    opacity: 1;
+  }
+  &__btn {
+    padding: 16px;
+    width: 100%;
+    @include text(16px, 18.78px, 600, $colorBlack);
+    background-color: $colorYellow;
+    border-radius: 12px;
+    @include transition(opacity, 0.3s, ease-in-out);
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .form {
+    &__input:hover {
+      border: 1px solid $colorInputText;
+    }
+    &__btn:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+//active, focus
+.form {
+  &__input:active {
+    border: 1px solid $colorInputText;
+  }
+  &__input:focus {
+    border: 1px solid $colorInputText;
+    outline: none;
+  }
+  &__btn:active {
+    opacity: 0.6;
+  }
+  &__btn:focus {
+    opacity: 0.6;
+    outline: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form {
+    &__container {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    &__content {
+      flex-direction: column;
+      background-image: none;
+      background-color: $colorWhite;
+      max-width: 688px;
+      padding: 32px;
+    }
+    &__left {
+      margin-bottom: 30px;
+    }
+    &__right {
+      max-width: none;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(12, 6fr);
+      gap: 30px;
+    }
+    &__item {
+      grid-column: span 6;
+    }
+    &__btn {
+      max-width: min-content;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    &__container {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    &__content {
+      padding: 20px;
+      max-width: 728px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    &__item {
+      grid-column: span 12;
+    }
+    &__list {
+      gap: 10px;
+    }
+    &__title {
+      @include text(24px, 28.58px, 400, $colorBlack);
+      margin-bottom: 32px;
+    }
+    &__descr {
+      @include text(16px, 18.78px, 400, $colorBlack);
+      margin-bottom: 32px;
+    }
+    &__btn {
+      max-width: 100%;
+    }
+  }
+}

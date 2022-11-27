@@ -1,0 +1,120 @@
+@import "_variables";
+@import "_mixins";
+
+.intro {
+  padding: 230px 0;
+  background-image: url("../img/intro-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    margin: 0 auto;
+    max-width: 887px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: "Marmelad", sans-serif;
+    @include text(56px, 66.7px, 400, $colorBlack);
+  }
+  &__descr {
+    margin: 0 auto;
+    max-width: 700px;
+    margin-bottom: 58px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    @include text(26px, 30.52px, 300, $colorBlack);
+  }
+  &__btns {
+    display: flex;
+    justify-content: center;
+  }
+  &__btn {
+    padding: 24px 42px;
+    @include text(18px, 21.13px, 600, $colorBlack);
+    background-color: $colorBtns;
+    border-radius: 12px;
+    @include transition(opacity, 0.3s, ease-in-out);
+  }
+  &__btn:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.btn-yellow {
+  background-color: $colorYellow;
+}
+
+//hover
+@media (min-width: 1024px) {
+  .intro {
+    &__btn:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+//active, focus
+.intro {
+  &__btn:active {
+    opacity: 0.6;
+  }
+  &__btn:focus {
+    opacity: 0.6;
+    outline: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    padding: 127px 0;
+    background-image: url("../img/intro-bg-1024.png");
+    &__content {
+      padding: 80px 0;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .intro {
+    padding: 92px 0;
+    background-image: url("../img/intro-bg-320.png");
+    &__content {
+      padding: 60px 0;
+    }
+    &__title {
+      @include text(36px, 50.7px, 400, $colorBlack);
+    }
+    &__descr {
+      @include text(20px, 26.52px, 300, $colorBlack);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    &__title {
+      margin-bottom: 24px;
+      @include text(24px, 28.58px, 400, $colorBlack);
+    }
+    &__descr {
+      margin-bottom: 24px;
+      @include text(16px, 18.78px, 300, $colorBlack);
+    }
+    &__btn {
+      padding: 12px 8px;
+      @include text(16px, 18.78px, 600, $colorBlack);
+    }
+    &__btn:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

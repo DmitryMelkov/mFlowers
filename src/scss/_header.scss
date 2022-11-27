@@ -1,0 +1,193 @@
+@import "_variables";
+@import "_mixins";
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__nav-list {
+    display: flex;
+  }
+  &__nav-item:not(:last-child) {
+    margin-right: 40px;
+  }
+  &__nav-link {
+    @include text(18px, 24px, 500, $colorBlack);
+    font-family: "Raleway", sans-serif;
+    @include transition(color, 0.3s, ease-in-out);
+  }
+  &__admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__admin-number {
+    margin-right: 10px;
+    @include text(20px, 23.44px, 600, $colorBlack);
+    font-family: "Roboto", sans-serif;
+    @include transition(color, 0.3s, ease-in-out);
+  }
+  &__admin-btn,
+  &__admin-btn {
+    padding: 14px 30px;
+    @include text(18px, 21.13px, 500, $colorBlack);
+    font-family: "Raleway", sans-serif;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    @include transition(border, 0.3s, ease-in-out);
+  }
+  &__admin-btn-create,
+  &__admin-btn-input {
+    display: none;
+  }
+  &__admin-lang {
+    display: none;
+  }
+  &__admin-lang-btn {
+    @include text(20px, 23px, 400, $colorGrey);
+    font-family: "Raleway", sans-serif;
+    @include transition(color, 0.3s, ease-in-out);
+  }
+  &__admin-lang-btn:not(:last-child) {
+    margin-right: 8px;
+  }
+  &__admin-lang-btn.active {
+    @include text(20px, 23px, 500, $colorBlack);
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .header {
+    &__admin-btn:hover,
+    &__admin-btn:hover {
+      border: 1px solid $colorBlack;
+    }
+    &__admin-number:hover {
+      color: $colorYellow;
+    }
+    &__nav-link:hover {
+      color: $colorYellow;
+    }
+  }
+}
+
+//active, focus
+.header {
+  &__admin-btn:active,
+  &__admin-btn:active {
+    border: 1px solid $colorBlack;
+  }
+  &__admin-btn:focus,
+  &__admin-btn:focus {
+    outline: none;
+    border: 1px solid $colorBlack;
+  }
+  &__admin-number:active {
+    color: $colorYellow;
+  }
+  &__admin-number:focus {
+    color: $colorYellow;
+    outline: none;
+  }
+  &__nav-link:active {
+    color: $colorYellow;
+  }
+  &__nav-link:focus {
+    color: $colorYellow;
+    outline: none;
+  }
+  &__admin-lang-btn:active {
+    color: $colorYellow;
+  }
+  &__admin-lang-btn:focus {
+    color: $colorYellow;
+    outline: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      z-index: 1;
+      background-color: $colorWhite;
+      border-radius: 15px;
+
+      transform: translateY(100px);
+      opacity: 0;
+      visibility: hidden;
+
+      box-shadow: 0px 0px 16px 7px rgba(70, 70, 71, 0.4);
+
+      @include transition((transform, opacity), 0.3s, ease-in-out);
+    }
+    &__nav.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    &__nav-list {
+      flex-direction: column;
+    }
+    &__nav-item:not(:last-child) {
+      margin-right: 0;
+    }
+    &__nav-item {
+      margin-bottom: 30px;
+      margin-left: 30px;
+    }
+    &__admin {
+      max-width: 500px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__admin-btn-create {
+      display: block;
+    }
+    &__admin-btn-account-create {
+      display: none;
+    }
+    &__admin-lang {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    &__admin-number {
+      @include text(16px, 18.75px, 500, $colorBlack);
+    }
+    &__admin-lang-btn {
+      @include text(16px, 18.78px, 400, $colorGrey);
+    }
+    &__admin-lang-btn.active {
+      @include text(16px, 18.78px, 400, $colorBlack);
+    }
+    &__admin-btn-account-input {
+      display: none;
+    }
+    &__admin-btn-input {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{ "title": "Главная" })
+
+<body class="body">
+  @@include('html/header.html',{ })
+  <main>
+    <!-- intro -->
+    <section class="intro">
+      <div class="container intro__container">
+        <div class="intro__content">
+          <h1 class="intro__title title-reset">Мы будем рады сотрудничать с вами на платформе 'Международной цветочной
+            онлайн-площадки'!</h1>
+          <p class="intro__descr descr-reset">Присоединяйтесь к нам и начните получать доход с бизнеса в первый месяц
+            регистрации! </p>
+          <div class="intro__btns">
+            <button class="intro__btn btn-yellow btn-reset">
+              Начать покупать
+            </button>
+            <button class="intro__btn btn-reset">
+              Начать продавать
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form -->
+    <section class="form">
+      <div class="container form__container">
+        <div class="form__content">
+          <div class="form__left">
+            <h2 class="form__title title-reset">Заполните форму и начните развивать свой бизнес прямо сейчас!</h2>
+            <p class="form__descr descr-reset">Регистрация на нашем сайте занимает несколько минут, просим ответить на
+              все вопросы полностью и корректно! После подтверждения регистрации вы попадёте в систему, где большинство
+              процессов автоматизированы, что сэкономит ваше время и деньги!</p>
+          </div>
+          <form class="form__right" action="/" id="form">
+            <ul class="form__list">
+              <li class="form__item">
+                <span class="form__span">Ваше имя</span>
+                <input type="text" class="form__input req" id="form-name" placeholder="Иванов Иван Иванович"
+                  name="form-name">
+                <label for="form-name" class="form__label">
+                  <svg class="form__label-svg">
+                    <use xlink:href="img/icons/icons.svg#input-error"></use>
+                  </svg>
+                  Заполните поле
+                </label>
+              </li>
+              <li class="form__item">
+                <span class="form__span">Название Компании</span>
+                <input type="text" class="form__input name req" id="form-company" placeholder="ООО Атлантика"
+                  name="form-company">
+                <label for="form-company" class="form__label">
+                  <svg class="form__label-svg">
+                    <use xlink:href="img/icons/icons.svg#input-error"></use>
+                  </svg>
+                  Заполните поле
+                </label>
+              </li>
+              <li class="form__item">
+                <span class="form__span">E-mai</span>
+                <input type="email" class="form__input email req" id="email" placeholder="flolovaalexa@com.rur" name="form-email">
+                <label for="email" class="form__label">
+                  <svg class="form__label-svg">
+                    <use xlink:href="img/icons/icons.svg#input-error"></use>
+                  </svg>
+                  Некорректный ввод
+                </label>
+              </li>
+              <li class="form__item">
+                <span class="form__span">Номер телефона</span>
+                <input type="tel" class="form__input phone req" id="number-phone" placeholder="+7 (XXX) - XXX XX XX"
+                  name="number-phone">
+                <label for="number-phone" class="form__label">
+                  <svg class="form__label-svg">
+                    <use xlink:href="img/icons/icons.svg#input-error"></use>
+                  </svg>
+                  Некорректный ввод
+                </label>
+              </li>
+              <li class="form__item">
+                <span class="form__span">Промокод</span>
+                <input type="text" class="form__input req" id="promo-code" placeholder="HGF864" name="promo-code">
+                <label for="promo-code" class="form__label">
+                  <svg class="form__label-svg">
+                    <use xlink:href="img/icons/icons.svg#input-error"></use>
+                  </svg>
+                  Неверный промокод
+                </label>
+              </li>
+            </ul>
+            <div class="form__btns">
+              <button class="form__btn btn-reset" type="submit">Далее</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+  @@include('html/footer.html',{ })
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
